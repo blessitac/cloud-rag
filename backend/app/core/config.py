@@ -14,6 +14,9 @@ class Settings(BaseSettings):
     JWT_SECRET: str = ""
     JWT_ALGO: str = "HS256"
 
+    SUPABASE_DB_CONNECTION_STRING: str = ""
+    DB_ECHO: bool = False
+
     APP_ENV: str = "dev"
     FRONTEND_ORIGIN: str = "http://localhost:5173"
 
