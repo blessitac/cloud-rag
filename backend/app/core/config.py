@@ -1,4 +1,4 @@
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     SUPABASE_URL: str = ""
@@ -18,6 +18,8 @@ class Settings(BaseSettings):
     FRONTEND_ORIGIN: str = "http://localhost:5173"
 
     class Config:
-        env_file = "backend/.env"
+        env_file = ".env"
+        extra = "ignore"
+
 
 settings = Settings()
