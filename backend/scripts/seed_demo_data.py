@@ -13,13 +13,13 @@ This script is idempotent - safe to run multiple times.
 import sys
 import os
 from uuid import uuid4
-
 # Add the parent directory to the path so we can import app modules
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from app.db.database import SessionLocal
-from app.models.domain.tenant import Tenant
-from app.models.domain.user import User
+from app.models.domain import Tenant, User
+import app.models.domain  # noqa: F401  # ensures ALL models are imported (side effect)
+
 
 def seed_demo_data():
     """Create demo tenant and user if they don't exist."""
