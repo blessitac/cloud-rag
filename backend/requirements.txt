@@ -6,3 +6,4 @@ httpx
 pydantic-settings
 SQLAlchemy>=2.0.0
 psycopg[binary]>=3.1.0
+qdrant-client>=1.9.0
